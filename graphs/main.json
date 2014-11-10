@@ -15,8 +15,8 @@
             "component": "dom/GetElement",
             "metadata": {
                 "label": "dom/GetElement",
-                "x": 252,
-                "y": 180,
+                "x": 36,
+                "y": 252,
                 "width": 72,
                 "height": 72
             }
@@ -25,8 +25,8 @@
             "component": "core/Output",
             "metadata": {
                 "label": "core/Output",
-                "x": 432,
-                "y": 360,
+                "x": 180,
+                "y": 252,
                 "width": 72,
                 "height": 72
             }
@@ -36,7 +36,7 @@
             "metadata": {
                 "label": "dom/WriteHtml",
                 "x": 684,
-                "y": 288,
+                "y": 144,
                 "width": 72,
                 "height": 72
             }
@@ -45,8 +45,8 @@
             "component": "dom/GetElement",
             "metadata": {
                 "label": "dom/GetElement",
-                "x": 252,
-                "y": 288,
+                "x": 36,
+                "y": 36,
                 "width": 72,
                 "height": 72
             }
@@ -55,18 +55,28 @@
             "component": "interaction/ListenMouse",
             "metadata": {
                 "label": "interaction/ListenMouse",
-                "x": 432,
-                "y": 180,
+                "x": 180,
+                "y": 144,
                 "width": 72,
                 "height": 72
             }
         },
-        "core/Kick_ey1nh": {
+        "prompts/Prompt_dztld": {
+            "component": "prompts/Prompt",
+            "metadata": {
+                "label": "prompts/Prompt",
+                "x": 432,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Kick_h8ypc": {
             "component": "core/Kick",
             "metadata": {
                 "label": "core/Kick",
-                "x": 576,
-                "y": 180,
+                "x": 324,
+                "y": 144,
                 "width": 72,
                 "height": 72
             }
@@ -81,8 +91,7 @@
             "tgt": {
                 "process": "dom/WriteHtml_fpz6j",
                 "port": "container"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -125,25 +134,40 @@
         },
         {
             "src": {
+                "process": "core/Kick_h8ypc",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "prompts/Prompt_dztld",
+                "port": "in"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
                 "process": "interaction/ListenMouse_1l373",
                 "port": "click"
             },
             "tgt": {
-                "process": "core/Kick_ey1nh",
+                "process": "core/Kick_h8ypc",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "core/Kick_ey1nh",
+                "process": "prompts/Prompt_dztld",
                 "port": "out"
             },
             "tgt": {
                 "process": "dom/WriteHtml_fpz6j",
                 "port": "html"
             },
-            "metadata": {}
+            "metadata": {
+                "route": null
+            }
         },
         {
             "data": "#button",
@@ -160,9 +184,9 @@
             }
         },
         {
-            "data": "Hello World!",
+            "data": "What's your name?",
             "tgt": {
-                "process": "core/Kick_ey1nh",
+                "process": "core/Kick_h8ypc",
                 "port": "data"
             }
         }
