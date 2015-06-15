@@ -16,17 +16,7 @@
             "metadata": {
                 "label": "dom/GetElement",
                 "x": 36,
-                "y": 252,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "core/Output_cg49": {
-            "component": "core/Output",
-            "metadata": {
-                "label": "core/Output",
-                "x": 180,
-                "y": 252,
+                "y": 72,
                 "width": 72,
                 "height": 72
             }
@@ -35,8 +25,8 @@
             "component": "dom/WriteHtml",
             "metadata": {
                 "label": "dom/WriteHtml",
-                "x": 684,
-                "y": 144,
+                "x": 792,
+                "y": 72,
                 "width": 72,
                 "height": 72
             }
@@ -45,8 +35,8 @@
             "component": "dom/GetElement",
             "metadata": {
                 "label": "dom/GetElement",
-                "x": 36,
-                "y": 36,
+                "x": 612,
+                "y": -36,
                 "width": 72,
                 "height": 72
             }
@@ -56,7 +46,7 @@
             "metadata": {
                 "label": "interaction/ListenMouse",
                 "x": 180,
-                "y": 144,
+                "y": 72,
                 "width": 72,
                 "height": 72
             }
@@ -66,7 +56,7 @@
             "metadata": {
                 "label": "prompts/Prompt",
                 "x": 432,
-                "y": 216,
+                "y": 144,
                 "width": 72,
                 "height": 72
             }
@@ -75,7 +65,17 @@
             "component": "core/Kick",
             "metadata": {
                 "label": "core/Kick",
-                "x": 324,
+                "x": 288,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "browser-app/Upper_20z6h": {
+            "component": "browser-app/Upper",
+            "metadata": {
+                "label": "browser-app/Upper",
+                "x": 612,
                 "y": 144,
                 "width": 72,
                 "height": 72
@@ -108,32 +108,6 @@
         },
         {
             "src": {
-                "process": "dom/GetElement_7amk2",
-                "port": "error"
-            },
-            "tgt": {
-                "process": "core/Output_cg49",
-                "port": "in"
-            },
-            "metadata": {
-                "route": 1
-            }
-        },
-        {
-            "src": {
-                "process": "dom/GetElement_xvz54",
-                "port": "error"
-            },
-            "tgt": {
-                "process": "core/Output_cg49",
-                "port": "in"
-            },
-            "metadata": {
-                "route": 1
-            }
-        },
-        {
-            "src": {
                 "process": "core/Kick_h8ypc",
                 "port": "out"
             },
@@ -153,8 +127,7 @@
             "tgt": {
                 "process": "core/Kick_h8ypc",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -162,12 +135,23 @@
                 "port": "out"
             },
             "tgt": {
-                "process": "dom/WriteHtml_fpz6j",
-                "port": "html"
+                "process": "browser-app/Upper_20z6h",
+                "port": "in"
             },
             "metadata": {
                 "route": null
             }
+        },
+        {
+            "src": {
+                "process": "browser-app/Upper_20z6h",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "dom/WriteHtml_fpz6j",
+                "port": "html"
+            },
+            "metadata": {}
         },
         {
             "data": "#button",
